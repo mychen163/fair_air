@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { refreshTokenSetup } from './utils/refreshToken';
 
-const {CLIENT_ID} = process.env;
+const clientId = "466071299399-0dolnc25ibf1h4ca4mu945sbvu30f4fr.apps.googleusercontent.com";
+
 
 function Login() {
 
@@ -30,7 +31,7 @@ function Login() {
         <div>
             { showloginButton ?
                 <GoogleLogin
-                    clientId={CLIENT_ID}
+                    clientId= {clientId}
                     buttonText="Sign In"
                     onSuccess={onLoginSuccess}
                     onFailure={onLoginFailure}
@@ -40,7 +41,7 @@ function Login() {
 
             { showlogoutButton ?
                 <GoogleLogout
-                    clientId={CLIENT_ID}
+                    clientId={clientId}
                     buttonText="Sign Out"
                     onLogoutSuccess={onSignoutSuccess}
                 >
